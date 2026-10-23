@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crea tu agente conectado a Metricool · Tutorial paso a paso</title>
+<meta name="description" content="Conecta Claude a Metricool y publica un video en Instagram, TikTok, Facebook y YouTube sin copiar y pegar.">
+<style>
+:root{--bg:#010526;--card:#11183a;--card2:#1b2352;--cy:#3ECFE0;--bl:#2E8BF0;--vi:#7A5CF5;--tx:#F5F0E6;--mu:#9aa3cf;--ok:#3EE08F}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--tx);line-height:1.6;
+background:radial-gradient(900px 500px at 15% -5%,rgba(122,92,245,.35),transparent 60%),radial-gradient(800px 500px at 100% 20%,rgba(62,207,224,.18),transparent 60%),var(--bg)}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 80px}
+.tag{display:inline-block;background:var(--bl);color:#fff;font-weight:700;font-size:12px;letter-spacing:.12em;padding:7px 14px;border-radius:8px}
+h1{font-size:clamp(34px,7vw,56px);line-height:1.05;margin:22px 0 14px;font-weight:900;letter-spacing:-.02em}
+h1 span{background:linear-gradient(90deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:19px;color:#d8d3c8;max-width:640px}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 8px}
+.pill{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid rgba(255,255,255,.1);padding:8px 14px;border-radius:999px;font-weight:600;font-size:14px}
+.dot{width:10px;height:10px;border-radius:50%}
+.box{background:linear-gradient(180deg,var(--card),#0b1130);border:1px solid rgba(255,255,255,.09);border-radius:22px;padding:24px 24px;margin:20px 0;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.box h2{margin:0 0 6px;font-size:22px}
+.step{display:flex;gap:18px}
+.num{flex:0 0 52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--cy),var(--vi));display:grid;place-items:center;font-weight:900;font-size:24px;color:#fff}
+.step h2{font-size:23px;margin:2px 0 8px}
+.step ol,.step ul,.box ul{margin:8px 0 0;padding-left:20px;color:#e6e1d6}
+li{margin:6px 0}
+b,strong{color:#fff}
+.note{margin-top:12px;background:rgba(62,207,224,.09);border:1px solid rgba(62,207,224,.35);border-radius:14px;padding:12px 14px;font-size:15px;color:#cfeff3}
+.warn{background:rgba(255,201,74,.09);border-color:rgba(255,201,74,.4);color:#ffe9b0}
+.ui{display:inline-block;background:var(--card2);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:1px 9px;font-weight:700;font-size:14px;color:#fff;white-space:nowrap}
+.prompt{position:relative;margin:10px 0;background:#070c2b;border:1px solid rgba(122,92,245,.5);border-left:4px solid var(--vi);border-radius:14px;padding:14px 16px 14px 16px;font-size:16px;color:#fff}
+.prompt small{display:block;color:var(--mu);font-size:12px;letter-spacing:.1em;margin-bottom:4px;font-weight:700}
+button.copy{position:absolute;top:10px;right:10px;background:var(--card2);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:5px 10px;font-size:12px;font-weight:700;cursor:pointer}
+button.copy:active{transform:scale(.96)}
+code{background:#070c2b;border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:2px 7px;font-size:14px;color:#9ee9f2;word-break:break-all}
+details{background:var(--card);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:14px 18px;margin:10px 0}
+summary{cursor:pointer;font-weight:700}
+details p,details ul{color:#e0dbd0;margin:10px 0 0}
+.flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin:8px 0 4px;font-weight:700}
+.flow .n{background:var(--card2);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 14px}
+.flow .a{color:var(--cy);font-size:22px}
+.cta{text-align:center;background:linear-gradient(135deg,rgba(62,207,224,.2),rgba(122,92,245,.28));border-color:rgba(122,92,245,.5)}
+.cta a{display:inline-block;margin-top:10px;background:var(--cy);color:#04122e;font-weight:900;padding:12px 22px;border-radius:999px;text-decoration:none}
+footer{text-align:center;color:var(--mu);font-size:14px;margin-top:34px}
+a{color:var(--cy)}
+</style></head><body><div class="wrap">
+
+<span class="tag">EL FRANCÉS · IA PARA TU NEGOCIO</span>
+<h1>Crea tu <span>agente conectado a Metricool</span></h1>
+<p class="lead">Publica un video en Instagram, TikTok, Facebook y YouTube <b>sin copiar y pegar</b>. Conectas Claude a tu cuenta de Metricool una sola vez, y después solo le pides lo que quieres publicar.</p>
+<div class="pills">
+<span class="pill"><i class="dot" style="background:#e8468c"></i>Instagram</span>
+<span class="pill"><i class="dot" style="background:#3ECFE0"></i>TikTok</span>
+<span class="pill"><i class="dot" style="background:#2E8BF0"></i>Facebook</span>
+<span class="pill"><i class="dot" style="background:#ff4650"></i>YouTube</span>
+</div>
+
+<div class="box">
+<div class="flow"><span class="n">Tú: la idea</span><span class="a">→</span><span class="n">Claude (tu agente)</span><span class="a">→</span><span class="n">Metricool</span><span class="a">→</span><span class="n">4 redes</span></div>
+</div>
+
+<div class="box">
+<h2>Antes de empezar (5 minutos)</h2>
+<ul>
+<li><b>Una cuenta de Metricool</b>. Sirve cualquier plan, incluido el gratuito; los límites de tu plan se mantienen.</li>
+<li><b>Tus redes ya conectadas en Metricool</b> (Instagram, TikTok, Facebook, YouTube). Si no lo están, en Metricool ve a <span class="ui">Conexiones</span> y añádelas.</li>
+<li><b>Claude</b>: la app de escritorio o <a href="https://claude.ai">claude.ai</a>, con tu sesión iniciada.</li>
+<li>Tu <b>video con un enlace público</b> (o subido a Google Drive / Dropbox) para que el agente lo pueda adjuntar.</li>
+</ul>
+</div>
+
+<div class="box step"><div class="num">1</div><div>
+<h2>Abre Claude y busca el conector de Metricool</h2>
+<ol>
+<li>Entra a Claude (app de escritorio o claude.ai) e inicia sesión.</li>
+<li>Abre <span class="ui">Configuración</span> y entra en <span class="ui">Conectores</span>.</li>
+<li>Pulsa <span class="ui">Explorar conectores</span>.</li>
+<li>En el buscador escribe <b>Metricool</b> y ábrelo.</li>
+</ol>
+<div class="note">La conexión se hace en tu cuenta de Claude: queda disponible en la web, el escritorio y la app del móvil.</div>
+</div></div>
+
+<div class="box step"><div class="num">2</div><div>
+<h2>Conecta tu cuenta de Metricool</h2>
+<ol>
+<li>Pulsa <span class="ui">Conectar</span> en la ficha de Metricool.</li>
+<li>Se abre el navegador en la página de Metricool: <b>inicia sesión con tu cuenta</b> (la misma donde tienes tus redes).</li>
+<li>Lee los permisos y pulsa <span class="ui">Dar acceso</span> / <span class="ui">Autorizar</span>.</li>
+<li>Vuelve a Claude: el conector aparece como <b>Conectado</b>.</li>
+</ol>
+<div class="note warn">Autorizas con tu propio usuario y contraseña de Metricool, en la página de Metricool. Nunca pegues claves ni contraseñas en el chat.</div>
+</div></div>
+
+<div class="box step"><div class="num">3</div><div>
+<h2>Activa el conector en tu conversación</h2>
+<ol>
+<li>Abre un chat nuevo con Claude.</li>
+<li>En el menú de herramientas (icono <span class="ui">+</span> o de ajustes junto al cuadro de texto) comprueba que <b>Metricool</b> está activado.</li>
+<li>Pregúntale algo simple para probar: <i>«¿Qué marcas tengo en Metricool?»</i></li>
+</ol>
+<div class="prompt"><small>PRUEBA</small>¿Qué marcas y redes tengo conectadas en Metricool?<button class="copy">Copiar</button></div>
+<div class="note">Si te responde con tu marca y tus redes, ya está conectado. Si no ve nada, repite el paso 2.</div>
+</div></div>
+
+<div class="box step"><div class="num">4</div><div>
+<h2>Pídele que publique</h2>
+<p style="margin:0 0 6px;color:#e6e1d6">Escríbele con naturalidad. Incluye: el video (enlace), las redes, el día y la hora, y el texto.</p>
+<div class="prompt"><small>PUBLICAR EN 3 REDES</small>Programa este video en Instagram, TikTok y Facebook, mañana a las 9:00. Texto: «Un video, cuatro redes, sin copiar y pegar». Video: [pega aquí el enlace público]<button class="copy">Copiar</button></div>
+<div class="prompt"><small>REVISAR ANTES</small>Prepáralo como borrador para que lo revise antes de publicar.<button class="copy">Copiar</button></div>
+<div class="prompt"><small>VER LO PROGRAMADO</small>Muéstrame lo que tengo programado esta semana.<button class="copy">Copiar</button></div>
+<div class="prompt"><small>MEJOR HORA</small>¿Cuál es el mejor horario para publicar en Instagram?<button class="copy">Copiar</button></div>
+</div></div>
+
+<div class="box step"><div class="num">5</div><div>
+<h2>Revisa y listo</h2>
+<ul>
+<li>Abre el <span class="ui">Planificador</span> de Metricool y comprueba que el post aparece en cada red con la hora correcta.</li>
+<li>Empieza con <b>un solo video</b> para ver cómo trabaja tu agente; después ya puedes pedirle una semana entera.</li>
+<li>Revisa el texto y la hora: tú sigues siendo quien decide, el agente solo ahorra el trabajo manual.</li>
+</ul>
+</div></div>
+
+<h2 style="margin:34px 0 4px">Preguntas frecuentes</h2>
+<details><summary>¿Necesito una clave de API?</summary><p>No. Te conectas iniciando sesión en Metricool y autorizando el acceso.</p></details>
+<details><summary>¿Funciona con el plan gratuito de Metricool?</summary><p>Sí, la conexión funciona con cualquier plan. Los límites de tu plan (publicaciones, redes) siguen aplicando.</p></details>
+<details><summary>¿Puedo usarlo desde el móvil?</summary><p>El conector queda ligado a tu cuenta de Claude, así que también aparece en la app del móvil.</p></details>
+<details><summary>No me aparece el conector</summary><p>Los pasos pueden variar un poco según la versión de Claude. Mira la guía oficial de Metricool, siempre al día: <a href="https://help.metricool.com/how-to-connect-metricools-mcp-with-claude-0l84v">help.metricool.com</a>.</p></details>
+<details><summary>Avanzado: usarlo con Claude Code (terminal)</summary><p>Con Claude Code instalado (requiere un plan Pro o Max de Claude), ejecuta:</p><p><code>claude mcp add --transport http metricool https://ai.metricool.com/mcp</code></p><p>Luego escribe <code>/mcp</code> y autentica en el navegador.</p></details>
+
+<div class="box cta"><h2>¿Quieres más automatizaciones así?</h2><p style="margin:6px 0">Sigue la cuenta y escríbeme por DM lo que quieres automatizar en tu negocio.</p><a href="https://www.instagram.com/elfrancesautomatiza/">@elfrancesautomatiza</a></div>
+
+<footer>Guía creada por Evolve · IA para tu negocio. Basada en la guía oficial de Metricool.</footer>
+</div>
+<script>document.querySelectorAll('button.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.parentElement.cloneNode(true);t.querySelector('small').remove();t.querySelector('button').remove();navigator.clipboard.writeText(t.textContent.trim()).then(function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1500)})})})</script>
+</body></html>
