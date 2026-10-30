@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cómo aparecer en las respuestas de la IA (GEO) · Guía paso a paso</title>
+<meta name="description" content="Qué hacer para que ChatGPT, Gemini y Google recomienden tu negocio. Guía práctica con fuentes oficiales.">
+<style>
+:root{--bg:#010526;--card:#11183a;--card2:#1b2352;--cy:#3ECFE0;--bl:#2E8BF0;--vi:#7A5CF5;--tx:#F5F0E6;--mu:#9aa3cf;--ok:#3EE08F}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--tx);line-height:1.6;
+background:radial-gradient(900px 500px at 15% -5%,rgba(122,92,245,.35),transparent 60%),radial-gradient(800px 500px at 100% 20%,rgba(62,207,224,.18),transparent 60%),var(--bg)}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 80px}
+.tag{display:inline-block;background:var(--bl);color:#fff;font-weight:700;font-size:12px;letter-spacing:.12em;padding:7px 14px;border-radius:8px}
+h1{font-size:clamp(34px,7vw,56px);line-height:1.05;margin:22px 0 14px;font-weight:900;letter-spacing:-.02em}
+h1 span{background:linear-gradient(90deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:19px;color:#d8d3c8;max-width:640px}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 8px}
+.pill{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid rgba(255,255,255,.1);padding:8px 14px;border-radius:999px;font-weight:600;font-size:14px}
+.dot{width:10px;height:10px;border-radius:50%}
+.box{background:linear-gradient(180deg,var(--card),#0b1130);border:1px solid rgba(255,255,255,.09);border-radius:22px;padding:24px 24px;margin:20px 0;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.box h2{margin:0 0 6px;font-size:22px}
+.step{display:flex;gap:18px}
+.num{flex:0 0 52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--cy),var(--vi));display:grid;place-items:center;font-weight:900;font-size:24px;color:#fff}
+.step h2{font-size:23px;margin:2px 0 8px}
+.step ol,.step ul,.box ul{margin:8px 0 0;padding-left:20px;color:#e6e1d6}
+li{margin:6px 0}
+b,strong{color:#fff}
+.note{margin-top:12px;background:rgba(62,207,224,.09);border:1px solid rgba(62,207,224,.35);border-radius:14px;padding:12px 14px;font-size:15px;color:#cfeff3}
+.warn{background:rgba(255,201,74,.09);border-color:rgba(255,201,74,.4);color:#ffe9b0}
+.ui{display:inline-block;background:var(--card2);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:1px 9px;font-weight:700;font-size:14px;color:#fff;white-space:nowrap}
+.prompt{position:relative;margin:10px 0;background:#070c2b;border:1px solid rgba(122,92,245,.5);border-left:4px solid var(--vi);border-radius:14px;padding:14px 16px 14px 16px;font-size:16px;color:#fff}
+.prompt small{display:block;color:var(--mu);font-size:12px;letter-spacing:.1em;margin-bottom:4px;font-weight:700}
+button.copy{position:absolute;top:10px;right:10px;background:var(--card2);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:5px 10px;font-size:12px;font-weight:700;cursor:pointer}
+button.copy:active{transform:scale(.96)}
+code{background:#070c2b;border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:2px 7px;font-size:14px;color:#9ee9f2;word-break:break-all}
+details{background:var(--card);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:14px 18px;margin:10px 0}
+summary{cursor:pointer;font-weight:700}
+details p,details ul{color:#e0dbd0;margin:10px 0 0}
+.flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin:8px 0 4px;font-weight:700}
+.flow .n{background:var(--card2);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 14px}
+.flow .a{color:var(--cy);font-size:22px}
+.cta{text-align:center;background:linear-gradient(135deg,rgba(62,207,224,.2),rgba(122,92,245,.28));border-color:rgba(122,92,245,.5)}
+.cta a{display:inline-block;margin-top:10px;background:var(--cy);color:#04122e;font-weight:900;padding:12px 22px;border-radius:999px;text-decoration:none}
+footer{text-align:center;color:var(--mu);font-size:14px;margin-top:34px}
+a{color:var(--cy)}
+</style></head><body><div class="wrap">
+<span class="tag">EL FRANCÉS · IA PARA TU NEGOCIO</span>
+<h1>Cómo <span>aparecer en las respuestas de la IA</span> (GEO)</h1>
+<p class="lead">Cada vez más gente le pregunta a ChatGPT, Gemini o Google «¿cuál es el mejor dentista de mi ciudad?». GEO es trabajar para que la respuesta mencione <b>tu negocio</b>. Esta guía junta lo que dicen las fuentes oficiales y lo que puedes hacer esta semana.</p>
+<div class="pills"><span class="pill"><i class="dot" style="background:#3ECFE0"></i>Google</span><span class="pill"><i class="dot" style="background:#10a37f"></i>ChatGPT</span><span class="pill"><i class="dot" style="background:#5a8cff"></i>Gemini</span><span class="pill"><i class="dot" style="background:#d97757"></i>Claude</span></div>
+
+<div class="box"><h2>La verdad antes de empezar</h2>
+<ul>
+<li>Nadie puede garantizar que la IA te recomiende. <b>Google lo dice claro:</b> estar indexado y poder mostrarse no garantiza aparecer.</li>
+<li>Para Google, aparecer en sus respuestas con IA (AI Overviews y AI Mode) <b>no exige ninguna técnica especial</b>: valen las buenas prácticas de SEO de siempre.</li>
+<li>Por eso el GEO empieza por lo básico, bien hecho.</li>
+</ul></div>
+
+<div class="box step"><div class="num">1</div><div>
+<h2>Deja que te lean</h2>
+<ol>
+<li><b>Google:</b> tu página debe estar indexada y poder mostrarse en la búsqueda. Revisa que ni el archivo <span class="ui">robots.txt</span> ni tu hosting o CDN bloqueen a Googlebot.</li>
+<li><b>ChatGPT:</b> OpenAI recomienda permitir a <span class="ui">OAI-SearchBot</span> en tu robots.txt. Si lo bloqueas, no apareces en las respuestas de ChatGPT search (como mucho, como enlace). Los cambios tardan cerca de 24 horas.</li>
+<li>Lo importante tiene que estar <b>escrito como texto</b> en la página (no solo en imágenes o PDF).</li>
+</ol>
+<div class="note">Esto es lo más rápido de arreglar y lo que más gente tiene mal: sitios que, sin saberlo, bloquean a los rastreadores.</div>
+</div></div>
+
+<div class="box step"><div class="num">2</div><div>
+<h2>Dile a la IA quién eres y dónde estás</h2>
+<ul>
+<li>Una página por <b>servicio</b>, con la <b>ciudad o comuna</b> y para quién es («Limpieza dental en Providencia»).</li>
+<li>Un bloque de <b>preguntas frecuentes</b> con respuestas cortas y concretas (precios solo si son reales y los mantienes al día).</li>
+<li>Tu nombre, dirección, teléfono y horarios <b>iguales en todas partes</b> (web, Google, redes).</li>
+<li>Si usas datos estructurados, que <b>coincidan con lo que se ve en la página</b>. Google no pide ningún formato nuevo para la IA.</li>
+</ul>
+<div class="note warn">Estas recomendaciones prácticas son buenas prácticas de SEO local, no requisitos oficiales de las IA.</div>
+</div></div>
+
+<div class="box step"><div class="num">3</div><div>
+<h2>Que hablen de ti fuera de tu web</h2>
+<ul>
+<li>Ficha de <b>Google Business Profile</b> completa y actualizada: servicios, fotos, horarios.</li>
+<li><b>Reseñas reales</b> de clientes y respuestas a ellas. Nunca compres reseñas.</li>
+<li>Menciones en directorios, medios locales y sitios de tu rubro.</li>
+</ul>
+</div></div>
+
+<div class="box step"><div class="num">4</div><div>
+<h2>Compruébalo cada semana</h2>
+<ol>
+<li>Pregúntale a ChatGPT, a Gemini y al modo IA de Google lo que preguntaría tu cliente: <i>«¿Cuál es el mejor [tu rubro] en [tu ciudad]?»</i></li>
+<li>Anota si apareces, en qué lugar y qué competidores salen.</li>
+<li>Repite cada semana con las mismas preguntas y compara.</li>
+<li>En Google, el tráfico que llega desde sus respuestas con IA se cuenta dentro del informe de rendimiento de <span class="ui">Search Console</span>.</li>
+</ol>
+<div class="prompt"><small>PROMPT PARA CLAUDE</small>Actúa como consultor de GEO. Revisa mi sitio [URL] y dime: 1) si mi robots.txt bloquea a Googlebot u OAI-SearchBot, 2) si mis páginas de servicio tienen texto claro con ciudad y preguntas frecuentes, 3) qué datos de contacto no coinciden entre mi web y mi ficha de Google, 4) las 5 mejoras más fáciles, ordenadas por esfuerzo. No inventes datos: si algo no lo puedes ver, dímelo.<button class="copy">Copiar</button></div>
+</div></div>
+
+<div class="box"><h2>Plan de 7 días</h2>
+<ul>
+<li><b>Día 1:</b> revisa robots.txt y que tus páginas estén indexadas.</li>
+<li><b>Día 2-3:</b> una página por servicio principal, con ciudad y preguntas frecuentes.</li>
+<li><b>Día 4:</b> completa tu ficha de Google Business Profile y unifica tus datos de contacto.</li>
+<li><b>Día 5:</b> pide reseñas a tus clientes más recientes.</li>
+<li><b>Día 6-7:</b> haz tus preguntas de prueba y anota dónde estás hoy. Ese es tu punto de partida.</li>
+</ul></div>
+
+<h2 style="margin:34px 0 4px">Fuentes oficiales</h2>
+<details open><summary>Lo que dice Google</summary><p><a href="https://developers.google.com/search/docs/appearance/ai-features">AI features and your website</a> (Google Search Central).</p></details>
+<details open><summary>Lo que dice OpenAI</summary><p><a href="https://developers.openai.com/api/docs/bots">OpenAI bots: OAI-SearchBot</a> (documentación de OpenAI).</p></details>
+<details><summary>Sobre la caída de Google en bolsa</summary><p>Datos del 29/10/2026 en <a href="https://finance.yahoo.com/markets/article/alphabet-heads-for-a-500-billion-drop-in-market-value-the-biggest-in-its-history-134824763.html">Yahoo Finance</a> y <a href="https://www.pymnts.com/news/artificial-intelligence/2026/alphabet-loses-500-billion-in-market-value-as-ai-threatens-google-search/">PYMNTS</a>. Los montos varían según la fuente (de 475 a 510 mil millones de dólares).</p></details>
+
+<div class="box cta"><h2>¿Quieres más guías como esta?</h2><p style="margin:6px 0">Sígueme y escríbeme por DM lo que quieres automatizar en tu negocio.</p><a href="https://www.instagram.com/elfrancesautomatiza/">@elfrancesautomatiza</a></div>
+<footer>Guía creada por El Francés · IA para tu negocio. Basada en la documentación oficial de Google y OpenAI. Última revisión: 30/10/2026.</footer>
+</div>
+<script>document.querySelectorAll('button.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.parentElement.cloneNode(true);t.querySelector('small').remove();t.querySelector('button').remove();navigator.clipboard.writeText(t.textContent.trim()).then(function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1500)})})})</script>
+</body></html>
